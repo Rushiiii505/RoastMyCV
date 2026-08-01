@@ -1,0 +1,101 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  
+  --color-primary: #7000FF;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #CCFF00;
+  --color-secondary-foreground: #000000;
+  --color-accent: #FF4500;
+  --color-accent-foreground: #FFFFFF;
+  --color-destructive: #FF0055;
+  --color-destructive-foreground: #FFFFFF;
+  --color-popover: #0055FF;
+  --color-popover-foreground: #FFFFFF;
+  --color-card: #FFFFFF;
+  --color-card-foreground: #000000;
+  --color-muted: #E5E7EB;
+  --color-muted-foreground: #4B5563;
+  --color-border: #000000;
+  --color-input: #000000;
+  --color-ring: #7000FF;
+
+  --shadow-brutal: 6px 6px 0px 0px #000000;
+  --shadow-brutal-lg: 10px 10px 0px 0px #000000;
+  --shadow-brutal-xl: 14px 14px 0px 0px #000000;
+}
+
+:root {
+  --background: #F4F4F0;
+  --foreground: #000000;
+  --card: #FFFFFF;
+  --card-foreground: #000000;
+  --popover: #0055FF;
+  --popover-foreground: #FFFFFF;
+  --primary: #7000FF;
+  --primary-foreground: #FFFFFF;
+  --secondary: #CCFF00;
+  --secondary-foreground: #000000;
+  --muted: #F3F4F6;
+  --muted-foreground: #4B5563;
+  --accent: #FF4500;
+  --accent-foreground: #FFFFFF;
+  --destructive: #FF0055;
+  --destructive-foreground: #FFFFFF;
+  --border: #000000;
+  --input: #000000;
+  --ring: #7000FF;
+  --radius: 1.25rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground selection:bg-[#CCFF00] selection:text-black;
+    background-image: 
+      radial-gradient(#000000 1.2px, transparent 1.2px), 
+      radial-gradient(#000000 1.2px, #F4F4F0 1.2px);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+    min-height: 100vh;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading uppercase tracking-tight;
+  }
+}
+
+/* Custom Pop-Art & Pitch Deck Utilities */
+@layer components {
+  .pitch-card {
+    @apply rounded-3xl border-4 border-black bg-white shadow-brutal transition-all duration-200 hover:-translate-y-1 hover:shadow-brutal-lg;
+  }
+
+  .sticker-badge {
+    @apply inline-flex items-center px-4 py-1.5 rounded-full border-3 border-black font-black text-sm uppercase tracking-wider shadow-[3px_3px_0px_#000000] transition-transform duration-150 hover:scale-105;
+  }
+
+  .terminal-box {
+    @apply rounded-2xl border-4 border-black bg-[#121212] text-[#CCFF00] font-mono p-6 shadow-brutal overflow-hidden relative;
+  }
+}
+
+/* Typewriter animation */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: cursor-blink 0.8s infinite;
+}
