@@ -119,7 +119,7 @@ export default function Home() {
 
     try {
       const isProd = process.env.NODE_ENV === 'production';
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || (isProd ? "/api/backend" : "http://localhost:8000");
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || (isProd ? "/api" : "http://localhost:8000/api");
       
       const response = await fetch(`${apiUrl}/analyze`, {
         method: "POST",

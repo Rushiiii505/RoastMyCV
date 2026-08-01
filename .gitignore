@@ -7,13 +7,13 @@ yarn-error.log*
 
 # Dependency directories
 node_modules/
-backend/venv/
-backend/__pycache__/
+api/venv/
+api/__pycache__/
 *.pyc
 
 # Next.js
-frontend/.next/
-frontend/out/
+.next/
+out/
 
 # Env
 .env

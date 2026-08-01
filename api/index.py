@@ -216,7 +216,7 @@ async def analyze_with_gemini(api_key: str, resume_text: str) -> ResumeAnalysis:
 
 
 # ── Health Check ─────────────────────────────────────────────
-@app.get("/health")
+@app.get("/api/health")
 def health_check():
     return {
         "status": "online",
@@ -228,7 +228,7 @@ def health_check():
 
 
 # ── Main Analyze Endpoint ───────────────────────────────────
-@app.post("/analyze", response_model=ResumeAnalysis)
+@app.post("/api/analyze", response_model=ResumeAnalysis)
 async def analyze_resume(
     file: UploadFile = File(...),
     custom_api_key: Optional[str] = Form(None)
