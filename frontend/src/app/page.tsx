@@ -60,7 +60,7 @@ export default function Home() {
   }, []);
 
   const saveApiKey = (keyToSave: string) => {
-    const trimmed = keyToSave.strip ? keyToSave.trim() : keyToSave;
+    const trimmed = (keyToSave || "").trim();
     setApiKey(trimmed);
     if (trimmed) {
       localStorage.setItem("roastmycv_gemini_key", trimmed);

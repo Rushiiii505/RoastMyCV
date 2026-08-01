@@ -25,7 +25,7 @@ export default function SplitText({ text, className = "", delay = 0.05 }: SplitT
       y: 0,
       rotate: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 12,
         stiffness: 200,
       },
