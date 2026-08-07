@@ -4,7 +4,7 @@
 
 **The unapologetic AI creative director grading your resume with zero filter.**
 
-![Visit](https://roast-my-cv-gamma.vercel.app)
+![](https://roast-my-cv-gamma.vercel.app)
 ![Tech Stack](https://img.shields.io/badge/Stack-Next.js%20%7C%20FastAPI%20%7C%20Gemini-CCFF00?style=for-the-badge&logo=next.js&labelColor=black&color=CCFF00)
 ![Status](https://img.shields.io/badge/Status-Roasting_Resumes-7000FF?style=for-the-badge)
 
